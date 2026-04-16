@@ -4,7 +4,7 @@ import os
 boj_levels = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby", "Unrated"]
 
 # 프로그래머스 난이도
-prog_levels = ["Lv1", "Lv2", "Lv3", "Lv4", "Lv5"]
+prog_levels = ["Lv0", "Lv1", "Lv2", "Lv3", "Lv4", "Lv5"]
 
 def count_problems(path):
     if not os.path.exists(path):
@@ -27,8 +27,8 @@ for lv in prog_levels:
     prog_result[lv] = count_problems(path)
 
 # 문자열 생성
-boj_text = "\n".join([f"- {k}: {v}" for k, v in boj_result.items()])
-prog_text = "\n".join([f"- {k}: {v}" for k, v in prog_result.items()])
+boj_text = "\n".join([f"- {k}: {v}" for k, v in boj_result.items() if v > 0])
+prog_text = "\n".join([f"- {k}: {v}" for k, v in prog_result.items() if v > 0])
 
 new_block = f"""### 🥇 Baekjoon
 {boj_text}
