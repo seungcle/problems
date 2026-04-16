@@ -3,11 +3,13 @@
 Welcome to my personal repository for solving problems from [Baekjoon Online Judge](https://www.acmicpc.net/).  
 This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub) extension.
 
-##  Goal  
-일주일에 한 문제씩,꾸준함이 실력이다.
+##  Stats
+<!-- STATS_START -->
+자동 업데이트 영역
+<!-- STATS_END -->
 
 ##  Features  
--  언어: C++   
+-  언어: C++,Python   
 -  코드 자동 업로드 (via BaekjoonHub)   
 
 ##  Directory Structure  
