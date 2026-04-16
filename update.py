@@ -4,7 +4,7 @@ import os
 boj_levels = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby", "Unrated"]
 
 # 프로그래머스 난이도
-prog_levels = ["Lv0", "Lv1", "Lv2", "Lv3", "Lv4", "Lv5"]
+prog_levels = ["level 0", "level 1", "level 2", "level 3", "level 4", "level 5"]
 
 def count_problems(path):
     if not os.path.exists(path):
