@@ -1,4 +1,5 @@
 import os
+import re
 
 # 백준 난이도 
 boj_levels = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby", "Unrated"]
@@ -27,10 +28,11 @@ if os.path.exists(prog_path):
         if os.path.isdir(full_path):
             name_lower = name.lower()
 
-            for i in range(6):
-                if f"level {i}" in name_lower:
-                    prog_result[f"Lv{i}"] += 1
-                    break
+            match = re.search(r"level\s*(\d)", name_lower)
+            if match:
+                lv = int(match.group(1))
+                if 0 <= lv <= 5:
+                    prog_result[f"Lv{lv}"] += 1
 
 # 문자열 생성 
 boj_text = "\n".join([f"- {k}: {v}" for k, v in boj_result.items() if v > 0])
