@@ -1,10 +1,7 @@
 import os
 
-# 백준 난이도 (Unrated 포함)
+# 백준 난이도 
 boj_levels = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby", "Unrated"]
-
-# 프로그래머스 난이도
-prog_levels = ["level 0", "level 1", "level 2", "level 3", "level 4", "level 5"]
 
 def count_problems(path):
     if not os.path.exists(path):
@@ -20,13 +17,22 @@ for lv in boj_levels:
     path = os.path.join("백준", lv)
     boj_result[lv] = count_problems(path)
 
-# 프로그래머스 카운트
-prog_result = {}
-for lv in prog_levels:
-    path = os.path.join("프로그래머스", lv)
-    prog_result[lv] = count_problems(path)
+# 프로그래머스 카운트 
+prog_result = {f"Lv{i}": 0 for i in range(6)}
+prog_path = "프로그래머스"
 
-# 문자열 생성
+if os.path.exists(prog_path):
+    for name in os.listdir(prog_path):
+        full_path = os.path.join(prog_path, name)
+        if os.path.isdir(full_path):
+            name_lower = name.lower()
+
+            for i in range(6):
+                if f"level {i}" in name_lower:
+                    prog_result[f"Lv{i}"] += 1
+                    break
+
+# 문자열 생성 
 boj_text = "\n".join([f"- {k}: {v}" for k, v in boj_result.items() if v > 0])
 prog_text = "\n".join([f"- {k}: {v}" for k, v in prog_result.items() if v > 0])
 
@@ -37,21 +43,19 @@ new_block = f"""### 🥇 Baekjoon
 {prog_text}
 """
 
-# README 읽기
+# README 치환 
 with open("README.md", "r", encoding="utf-8") as f:
     text = f.read()
 
 start = "<!-- STATS_START -->"
 end = "<!-- STATS_END -->"
 
-# 치환 (안전 방식)
 if start in text and end in text:
     new_text = text.split(start)[0] + start + "\n" + new_block + "\n" + end + text.split(end)[1]
 else:
     print("ERROR: STATS 구간 없음")
     new_text = text
 
-# README 쓰기
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(new_text)
 
