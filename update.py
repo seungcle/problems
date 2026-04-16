@@ -17,7 +17,8 @@ for lv in boj_levels:
     path = os.path.join("백준", lv)
     boj_result[lv] = count_problems(path)
 
-# 프로그래머스 카운트 prog_result = {f"Lv{i}": 0 for i in range(6)}
+# 프로그래머스 카운트 
+prog_result = {f"Lv{i}": 0 for i in range(6)}
 prog_root = "프로그래머스"
 
 if os.path.exists(prog_root):
