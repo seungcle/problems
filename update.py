@@ -1,5 +1,4 @@
 import os
-import re
 
 # 백준 난이도 
 boj_levels = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby", "Unrated"]
@@ -18,20 +17,32 @@ for lv in boj_levels:
     path = os.path.join("백준", lv)
     boj_result[lv] = count_problems(path)
 
-# 프로그래머스 카운트 
-prog_result = {f"Lv{i}": 0 for i in range(6)}
-prog_path = "프로그래머스"
+# 프로그래머스 카운트 prog_result = {f"Lv{i}": 0 for i in range(6)}
+prog_root = "프로그래머스"
 
-if os.path.exists(prog_path):
-    for name in os.listdir(prog_path):
-        full_path = os.path.join(prog_path, name)
-        if os.path.isdir(full_path):
-            name_lower = name.lower()
+if os.path.exists(prog_root):
+    for name in os.listdir(prog_root):
+        full_path = os.path.join(prog_root, name)
 
-            match = re.search(r"level\s*(\d)", name_lower)
-            if match:
-                lv = int(match.group(1))
-                if 0 <= lv <= 5:
+        if not os.path.isdir(full_path):
+            continue
+
+        if "/" in name:
+            continue  # 
+        parts = name.split("/")
+        
+        if name.isdigit():
+            lv = int(name)
+
+            if 0 <= lv <= 5:
+                subdirs = [
+                    d for d in os.listdir(full_path)
+                    if os.path.isdir(os.path.join(full_path, d))
+                ]
+
+                if subdirs:
+                    prog_result[f"Lv{lv}"] += len(subdirs)
+                else:
                     prog_result[f"Lv{lv}"] += 1
 
 # 문자열 생성 
