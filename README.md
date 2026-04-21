@@ -6,9 +6,9 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 ##  Stats
 <!-- STATS_START -->
 ### 🥇 Baekjoon
-- Bronze: 4
-- Silver: 8
-- Gold: 37
+- Bronze: 55
+- Silver: 35
+- Gold: 40
 - Platinum: 7
 - Diamond: 2
 - Ruby: 1
