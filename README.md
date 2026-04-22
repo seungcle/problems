@@ -9,7 +9,7 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 - Bronze: 55
 - Silver: 35
 - Gold: 40
-- Platinum: 7
+- Platinum: 8
 - Diamond: 2
 - Ruby: 1
 - Unrated: 1
