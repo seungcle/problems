@@ -15,7 +15,7 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 - Unrated: 1
 
 ### 💻 Programmers
-- Lv0: 28
+- Lv0: 29
 - Lv1: 6
 - Lv2: 3
 - Lv3: 2
