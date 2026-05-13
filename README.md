@@ -18,7 +18,7 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 - Lv0: 29
 - Lv1: 11
 - Lv2: 15
-- Lv3: 11
+- Lv3: 12
 - Lv4: 5
 - Lv5: 1
 
