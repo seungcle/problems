@@ -11,12 +11,13 @@ BOJ_ROOT = "백준"
 PROGRAMMERS_ROOT = "프로그래머스"
 
 README_PATH = "README.md"
+
 ASSETS_DIR = "assets"
-CHART_PATH = os.path.join(ASSETS_DIR, "solved_stats.png")
+BOJ_CHART_PATH = os.path.join(ASSETS_DIR, "boj_stats.png")
+PROGRAMMERS_CHART_PATH = os.path.join(ASSETS_DIR, "programmers_stats.png")
 
 START_MARKER = "<!-- STATS_START -->"
 END_MARKER = "<!-- STATS_END -->"
-
 
 # =========================
 # 문제 수 카운트
@@ -71,14 +72,11 @@ def get_programmers_stats():
 
     return result
 
-
 # =========================
 # 그래프 생성
 # =========================
 
-def make_chart(boj_stats, programmers_stats):
-    os.makedirs(ASSETS_DIR, exist_ok=True)
-
+def make_boj_chart(stats):
     labels = []
     values = []
     colors = []
@@ -91,6 +89,52 @@ def make_chart(boj_stats, programmers_stats):
         "Diamond": "#00BFFF",
         "Ruby": "#FF007F",
         "Unrated": "#888888",
+    }
+
+    for level, count in stats.items():
+        if count > 0:
+            labels.append(level)
+            values.append(count)
+            colors.append(color_map.get(level, "#888888"))
+
+    plt.figure(figsize=(9, 4.5))
+
+    bars = plt.barh(labels, values, color=colors)
+
+    plt.title("Baekjoon Solved Problems", fontsize=16, fontweight="bold")
+    plt.xlabel("Solved Count")
+
+    plt.gca().invert_yaxis()
+
+    max_value = max(values)
+
+    for bar in bars:
+        width = bar.get_width()
+
+        plt.text(
+            width + max_value * 0.02 + 0.1,
+            bar.get_y() + bar.get_height() / 2,
+            str(int(width)),
+            va="center",
+            fontsize=11
+        )
+
+    plt.tight_layout()
+    plt.savefig(
+        BOJ_CHART_PATH,
+        dpi=300,
+        transparent=True,
+        bbox_inches="tight"
+    )
+    plt.close()
+
+
+def make_programmers_chart(stats):
+    labels = []
+    values = []
+    colors = []
+
+    color_map = {
         "Lv0": "#A0A0A0",
         "Lv1": "#7DD3FC",
         "Lv2": "#60A5FA",
@@ -99,68 +143,77 @@ def make_chart(boj_stats, programmers_stats):
         "Lv5": "#C084FC",
     }
 
-    for level, count in boj_stats.items():
+    for level, count in stats.items():
         if count > 0:
-            labels.append(f"BOJ {level}")
+            labels.append(level)
             values.append(count)
             colors.append(color_map.get(level, "#888888"))
 
-    for level, count in programmers_stats.items():
-        if count > 0:
-            labels.append(f"PG {level}")
-            values.append(count)
-            colors.append(color_map.get(level, "#888888"))
-
-    if not labels:
-        labels = ["No solved problems"]
-        values = [0]
-        colors = ["#888888"]
-
-    plt.figure(figsize=(10, max(4, len(labels) * 0.55)))
+    plt.figure(figsize=(9, 4.5))
 
     bars = plt.barh(labels, values, color=colors)
 
-    plt.title("Solved Problem Stats", fontsize=16, fontweight="bold")
+    plt.title("Programmers Solved Problems", fontsize=16, fontweight="bold")
     plt.xlabel("Solved Count")
+
     plt.gca().invert_yaxis()
 
-    max_value = max(values) if values else 0
+    max_value = max(values)
 
     for bar in bars:
         width = bar.get_width()
+
         plt.text(
             width + max_value * 0.02 + 0.1,
             bar.get_y() + bar.get_height() / 2,
             str(int(width)),
             va="center",
-            fontsize=11,
+            fontsize=11
         )
 
     plt.tight_layout()
-    plt.savefig(CHART_PATH, dpi=300, transparent=True, bbox_inches="tight")
+    plt.savefig(
+        PROGRAMMERS_CHART_PATH,
+        dpi=300,
+        transparent=True,
+        bbox_inches="tight"
+    )
     plt.close()
 
-
 # =========================
-# README 갱신
+# README 생성
 # =========================
 
 def make_readme_block(boj_stats, programmers_stats):
     boj_total = sum(boj_stats.values())
     programmers_total = sum(programmers_stats.values())
+
     total = boj_total + programmers_total
 
-    return f"""## 📊 Solved Stats
+    return f"""
+### 🥇 Baekjoon
 
-![Solved Stats]({CHART_PATH.replace(os.sep, "/")})
+<p align="center">
+  <img src="{BOJ_CHART_PATH.replace(os.sep, '/')}" width="700"/>
+</p>
 
-| Platform | Count |
+### 💻 Programmers
+
+<p align="center">
+  <img src="{PROGRAMMERS_CHART_PATH.replace(os.sep, '/')}" width="700"/>
+</p>
+
+| Platform | Solved |
 |---|---:|
 | Baekjoon | {boj_total} |
 | Programmers | {programmers_total} |
 | Total | {total} |
 """
 
+
+# =========================
+# README 업데이트
+# =========================
 
 def update_readme(new_block):
     if not os.path.exists(README_PATH):
@@ -171,10 +224,6 @@ def update_readme(new_block):
 
     if START_MARKER not in text or END_MARKER not in text:
         print("ERROR: README에 STATS 마커가 없습니다.")
-        print("README.md에 아래 구간을 추가하세요.")
-        print()
-        print(START_MARKER)
-        print(END_MARKER)
         return
 
     before = text.split(START_MARKER)[0]
@@ -185,22 +234,25 @@ def update_readme(new_block):
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_text)
 
-
 # =========================
 # 실행
 # =========================
 
 def main():
+    os.makedirs(ASSETS_DIR, exist_ok=True)
+
     boj_stats = get_boj_stats()
     programmers_stats = get_programmers_stats()
 
-    make_chart(boj_stats, programmers_stats)
+    make_boj_chart(boj_stats)
+    make_programmers_chart(programmers_stats)
 
     new_block = make_readme_block(boj_stats, programmers_stats)
+
     update_readme(new_block)
 
     print("✅ README 업데이트 완료")
-    print(f"✅ 그래프 생성 완료: {CHART_PATH}")
+    print("✅ 그래프 생성 완료")
 
 
 if __name__ == "__main__":
