@@ -1,33 +1,42 @@
-#  Baekjoon Problem Solving Log
+# Baekjoon Problem Solving Log
 
 Welcome to my personal repository for solving problems from [Baekjoon Online Judge](https://www.acmicpc.net/).  
 This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub) extension.
 
-##  Stats
+## 📊 Stats
+
 <!-- STATS_START -->
+
 ### 🥇 Baekjoon
-- Bronze: 55
-- Silver: 35
-- Gold: 40
-- Platinum: 8
-- Diamond: 2
-- Ruby: 1
-- Unrated: 1
+
+<p align="center">
+  <img src="assets/boj_stats.png" width="700"/>
+</p>
 
 ### 💻 Programmers
-- Lv0: 29
-- Lv1: 11
-- Lv2: 16
-- Lv3: 15
-- Lv4: 5
-- Lv5: 1
+
+<p align="center">
+  <img src="assets/programmers_stats.png" width="700"/>
+</p>
+
+<p align="center">
+
+| Platform | Solved |
+|---|---:|
+| Baekjoon | 141 |
+| Programmers | 77 |
+| Total | 218 |
+
+</p>
 
 <!-- STATS_END -->
 
-##  Features  
--  언어: C++,Python   
--  코드 자동 업로드 (via BaekjoonHub)   
+## ✨ Features
 
-##  Directory Structure  
+- 언어: C++, Python
+- 코드 자동 업로드 (via BaekjoonHub)
+
+## 📁 Directory Structure
+
 BaekjoonHub 확장 프로그램을 사용하여 **난이도별**로 폴더가 자동 생성됩니다.  
-각 문제는 문제번호 폴더에  `문제이름.확장자` 형식으로 저장됩니다.
+각 문제는 문제번호 폴더에 `문제이름.확장자` 형식으로 저장됩니다.
