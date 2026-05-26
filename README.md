@@ -24,8 +24,8 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 | Category | Count |
 |---|---:|
 | 🥇 Baekjoon | 142 |
-| 💻 Programmers | 77 |
-| 🏆 Total | 219 |
+| 💻 Programmers | 78 |
+| 🏆 Total | 220 |
 
 <!-- STATS_END -->
 
