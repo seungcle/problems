@@ -6,11 +6,20 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 ## 📊 Stats
 
 <!-- STATS_START -->
-## 📊 Solved Stats
 
-![Solved Stats](assets/solved_stats.png)
+### 🥇 Baekjoon
 
-| Platform | Count |
+<p align="center">
+  <img src="assets/boj_stats.png" width="700"/>
+</p>
+
+### 💻 Programmers
+
+<p align="center">
+  <img src="assets/programmers_stats.png" width="700"/>
+</p>
+
+| Platform | Solved |
 |---|---:|
 | Baekjoon | 142 |
 | Programmers | 77 |
