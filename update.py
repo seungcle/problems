@@ -220,6 +220,8 @@ def make_readme_block(boj_stats, programmers_stats):
   <img src="{PROGRAMMERS_SVG_PATH.replace(os.sep, '/')}" width="700"/>
 </p>
 
+### 🚀 Solving Progress
+
 | Category | Count |
 |---|---:|
 | 🥇 Baekjoon | {boj_total} |
