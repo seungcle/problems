@@ -19,6 +19,8 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
   <img src="assets/programmers_stats.png" width="700"/>
 </p>
 
+### 🏆 Total Solved
+
 | Platform | Solved |
 |---|---:|
 | Baekjoon | 142 |
