@@ -76,7 +76,7 @@ def get_programmers_stats():
 # SVG 생성
 # =========================
 
-def generate_svg(title, stats, color_map, output_path):
+def generate_svg(stats, color_map, output_path):
     labels = [k for k, v in stats.items() if v > 0]
     values = [v for v in stats.values() if v > 0]
 
@@ -88,11 +88,11 @@ def generate_svg(title, stats, color_map, output_path):
     width = 800
     bar_height = 32
     gap = 18
-    top_padding = 70
-    left_padding = 150
-    right_padding = 80
 
-    height = top_padding + len(labels) * (bar_height + gap) + 40
+    top_padding = 35
+    left_padding = 150
+
+    height = top_padding + len(labels) * (bar_height + gap) + 20
 
     svg = []
 
@@ -101,10 +101,6 @@ def generate_svg(title, stats, color_map, output_path):
      xmlns="http://www.w3.org/2000/svg">
 
 <style>
-.title {{
-    font: bold 28px sans-serif;
-    fill: #111827;
-}}
 
 .label {{
     font: 18px sans-serif;
@@ -115,15 +111,10 @@ def generate_svg(title, stats, color_map, output_path):
     font: bold 18px sans-serif;
     fill: #111827;
 }}
+
 </style>
 
 <rect width="100%" height="100%" fill="white"/>
-
-<text x="{width/2}" y="40"
-      text-anchor="middle"
-      class="title">
-    {title}
-</text>
 ''')
 
     y = top_padding
@@ -174,7 +165,6 @@ def make_boj_svg(stats):
     }
 
     generate_svg(
-        title="Baekjoon Solved Problems",
         stats=stats,
         color_map=color_map,
         output_path=BOJ_SVG_PATH
@@ -192,7 +182,6 @@ def make_programmers_svg(stats):
     }
 
     generate_svg(
-        title="Programmers Solved Problems",
         stats=stats,
         color_map=color_map,
         output_path=PROGRAMMERS_SVG_PATH
@@ -226,7 +215,7 @@ def make_readme_block(boj_stats, programmers_stats):
 |---|---:|
 | 🥇 Baekjoon | {boj_total} |
 | 💻 Programmers | {programmers_total} |
-| 🏆 Total Solved | {total} |
+| 🏆 Total | {total} |
 """
 
 
