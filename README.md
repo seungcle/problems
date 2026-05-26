@@ -21,11 +21,11 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 
 ### 🏆 Total Solved
 
-| Platform | Solved |
+| Category | Count |
 |---|---:|
-| Baekjoon | 142 |
-| Programmers | 77 |
-| Total | 219 |
+| 🥇 Baekjoon | 141 |
+| 💻 Programmers | 77 |
+| 🏆 Total Solved | 218 |
 
 <!-- STATS_END -->
 
