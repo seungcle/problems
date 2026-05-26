@@ -1,0 +1,177 @@
+
+<svg width="800" height="460" viewBox="0 0 800 460"
+     xmlns="http://www.w3.org/2000/svg">
+
+<style>
+.title {
+    font: bold 28px sans-serif;
+    fill: #111827;
+}
+
+.label {
+    font: 18px sans-serif;
+    fill: #374151;
+}
+
+.value {
+    font: bold 18px sans-serif;
+    fill: #111827;
+}
+</style>
+
+<rect width="100%" height="100%" fill="white"/>
+
+<text x="400.0" y="40"
+      text-anchor="middle"
+      class="title">
+    Baekjoon Solved Problems
+</text>
+
+
+<text x="135" y="92"
+      text-anchor="end"
+      class="label">
+    Bronze
+</text>
+
+<rect x="150"
+      y="70"
+      rx="10"
+      ry="10"
+      width="500.0"
+      height="32"
+      fill="#CD7F32"/>
+
+<text x="665.0"
+      y="92"
+      class="value">
+    55
+</text>
+
+
+<text x="135" y="142"
+      text-anchor="end"
+      class="label">
+    Silver
+</text>
+
+<rect x="150"
+      y="120"
+      rx="10"
+      ry="10"
+      width="318.1818181818182"
+      height="32"
+      fill="#C0C0C0"/>
+
+<text x="483.1818181818182"
+      y="142"
+      class="value">
+    35
+</text>
+
+
+<text x="135" y="192"
+      text-anchor="end"
+      class="label">
+    Gold
+</text>
+
+<rect x="150"
+      y="170"
+      rx="10"
+      ry="10"
+      width="363.6363636363636"
+      height="32"
+      fill="#FFD700"/>
+
+<text x="528.6363636363636"
+      y="192"
+      class="value">
+    40
+</text>
+
+
+<text x="135" y="242"
+      text-anchor="end"
+      class="label">
+    Platinum
+</text>
+
+<rect x="150"
+      y="220"
+      rx="10"
+      ry="10"
+      width="72.72727272727272"
+      height="32"
+      fill="#58D3F7"/>
+
+<text x="237.72727272727272"
+      y="242"
+      class="value">
+    8
+</text>
+
+
+<text x="135" y="292"
+      text-anchor="end"
+      class="label">
+    Diamond
+</text>
+
+<rect x="150"
+      y="270"
+      rx="10"
+      ry="10"
+      width="18.18181818181818"
+      height="32"
+      fill="#00BFFF"/>
+
+<text x="183.1818181818182"
+      y="292"
+      class="value">
+    2
+</text>
+
+
+<text x="135" y="342"
+      text-anchor="end"
+      class="label">
+    Ruby
+</text>
+
+<rect x="150"
+      y="320"
+      rx="10"
+      ry="10"
+      width="9.09090909090909"
+      height="32"
+      fill="#FF007F"/>
+
+<text x="174.0909090909091"
+      y="342"
+      class="value">
+    1
+</text>
+
+
+<text x="135" y="392"
+      text-anchor="end"
+      class="label">
+    Unrated
+</text>
+
+<rect x="150"
+      y="370"
+      rx="10"
+      ry="10"
+      width="9.09090909090909"
+      height="32"
+      fill="#9CA3AF"/>
+
+<text x="174.0909090909091"
+      y="392"
+      class="value">
+    1
+</text>
+
+</svg>
