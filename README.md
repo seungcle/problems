@@ -6,25 +6,6 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 ## 📊 Stats
 
 <!-- STATS_START -->
-
-### 🥇 Baekjoon
-
-<p align="center">
-  <img src="assets/boj_stats.svg" width="700"/>
-</p>
-
-### 💻 Programmers
-
-<p align="center">
-  <img src="assets/programmers_stats.svg" width="700"/>
-</p>
-
-| Category | Count |
-|---|---:|
-| 🥇 Baekjoon | 142 |
-| 💻 Programmers | 77 |
-| 🏆 Total Solved | 219 |
-
 <!-- STATS_END -->
 
 ## ✨ Features
