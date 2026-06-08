@@ -31,7 +31,7 @@ This repo is auto-pushed using [BaekjoonHub](https://github.com/BaekjoonHub/Baek
 
 ## ✨ Features
 
-- 언어: C++, Python
+- 언어: C++(백준), Python(프로그래머스)
 - 코드 자동 업로드 (via BaekjoonHub)
 
 ## 📁 Directory Structure
